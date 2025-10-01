@@ -22,9 +22,9 @@ def test_deposit_with_negative_fails(start_account):
     with pytest.raises(ValueError):
         start_account.withdraw(-5)
 
-def test_deposit_with_insufficient_funds(start_account):
+def test_withdraw_with_insufficient_funds(start_account):
     with pytest.raises(ValueError):
-        start_account.deposit(150)
+        start_account.withdraw(150)
 
 def test_transfer(start_account):
     target = BankAccount(0)
