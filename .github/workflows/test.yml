@@ -15,9 +15,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Run tests
-        run: pytest
+      
+      - name: Install requirements
+        uses: |
+          pip install -r requirements.txt
+          ls -alR
+      
+      - name: Debug pytest
+        uses: pytest
         
 	# your task: figure out the remainings steps 
 	# that match your selected language. 
